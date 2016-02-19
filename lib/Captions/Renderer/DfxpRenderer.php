@@ -8,13 +8,15 @@ class DfxpRenderer
 	implements IRenderer
 {
 
+	private $_elements;
+
 	public function set_element($name, $value)
 	{
 		$this->_elements[$name] = $value;
 		return $this;
 	}
 
-	public function render($caption_set, $file = false)
+	public function render(\Captions\Set $caption_set, $file = false)
 	{
 		$dom = new \DOMDocument("1.0");
 		$dom->formatOutput = true;

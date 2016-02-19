@@ -3,7 +3,7 @@ namespace Captions\Helper;
 
 class SrtHelper
 {
-	public function string_to_time($string)
+	public static function string_to_time($string)
 	{
 		list($hours, $minutes, $seconds, $milliseconds) = preg_split("[:|,]", $string);
 
@@ -20,7 +20,7 @@ class SrtHelper
 		return $time;
 	}
 
-	public function time_to_string($time)
+	public static function time_to_string($time)
 	{
 		// Let's hardcode hack this floating point bitch
 		$time = (string) $time;
@@ -37,7 +37,7 @@ class SrtHelper
 		return sprintf("%02d:%02d:%02d,%03d", $hours, $minutes, $seconds, $milliseconds);
 	}
 
-	public function is_srt($string)
+	public static function is_srt($string)
 	{
 		return preg_match("/^(\d)+[\r|\n][\r\n]?(\d{2}:\d{2}:\d{2},\d{3}) --> (\d{2}:\d{2}:\d{2},\d{3})[\r\n]{1,2}/", $string);
 	}

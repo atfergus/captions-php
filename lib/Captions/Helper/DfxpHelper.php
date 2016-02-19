@@ -3,7 +3,7 @@ namespace Captions\Helper;
 
 class DfxpHelper
 {
-	public function string_to_time($string)
+	public static function string_to_time($string)
 	{
 		list($hours, $minutes, $seconds, $milliseconds) = preg_split("[:.]", $string);
 
@@ -20,7 +20,7 @@ class DfxpHelper
 		return $time;
 	}
 
-	public function time_to_string($time)
+	public static function time_to_string($time)
 	{
 		$hours = floor($time/60/60);
 
@@ -33,7 +33,7 @@ class DfxpHelper
 			($milliseconds > 0 ? trim((string) $milliseconds, '0') : '');
 	}
 
-	public function is_dfxp($string)
+	public static function is_dfxp($string)
 	{
 		return preg_match("/^(\d)+[\r|\n][\r\n]?(\d{2}:\d{2}:\d{2}[.\d{1,3}]?) --> (\d{2}:\d{2}:\d{2}[.\d{1,3}]?)[\r\n]{1,2}/", $string);
 	}

@@ -3,5 +3,5 @@ namespace Captions\Renderer;
 
 interface IRenderer
 {
-	public function render($caption_set, $file = false);
+	public function render(\Captions\Set $caption_set, $file = false);
 }
