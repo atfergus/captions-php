@@ -4,7 +4,7 @@ namespace Captions\Renderer;
 class SrtRenderer
 	implements IRenderer
 {
-	public function render($caption_set, $file = false)
+	public function render(\Captions\Set $caption_set, $file = false)
 	{
 		$captions = array();
 
@@ -12,8 +12,8 @@ class SrtRenderer
 		{
 			$captions[] = sprintf("%d\n%s --> %s\n%s",
 				$index+1,
-				Captions_Helper_SrtHelper::time_to_string($caption->start()),
-				Captions_Helper_SrtHelper::time_to_string($caption->end()),
+				\Captions\Helper\SrtHelper::time_to_string($caption->start()),
+				\Captions\Helper\SrtHelper::time_to_string($caption->end()),
 				$caption->text()
 			);
 		}
