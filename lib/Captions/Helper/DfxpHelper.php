@@ -1,23 +1,12 @@
 <?PHP
 namespace Captions\Helper;
 
-class DfxpHelper
+class DfxpHelper extends Helper
 {
 	public static function string_to_time($string)
 	{
 		list($hours, $minutes, $seconds, $milliseconds) = preg_split("[:.]", $string);
-
-		$time = (float) $seconds;
-
-		$time += (float) $milliseconds/1000;
-
-		$time += 60 * (int) $minutes;
-
-		$time += 60 * 60 * (int) $hours;
-
-		$time || $time = (float) 0;
-
-		return $time;
+		return self::make_time($hours, $minutes, $seconds, $milliseconds);
 	}
 
 	public static function time_to_string($time)
