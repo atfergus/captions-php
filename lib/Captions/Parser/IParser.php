@@ -1,6 +1,7 @@
 <?PHP
+namespace Captions\Parser;
 
-interface Captions_Parser
+interface IParser
 {
 	public function __construct($content);
 	public function parse();

@@ -1,16 +1,16 @@
 <?PHP
 
-class Captions
+class CaptionsBuilder
 {
 	public static function from_srt($content)
 	{
-		$parser = new Captions_Parser_SrtParser($content);
+		$parser = new \Captions\Parser\SrtParser($content);
 		return $parser->parse();
 	}
 
-	public static function to_srt(Captions_Set $captions, $file = null)
+	public static function to_srt(Captions\Set $captions, $file = null)
 	{
-		$renderer = new Captions_Renderer_SrtRenderer();
+		$renderer = new \Captions\Renderer\SrtRenderer();
 		return $renderer->render($captions, $file);
 	}
 
@@ -23,14 +23,14 @@ class Captions
 
 	public static function from_dfxp($content)
 	{
-		throw new Captions_Parser_Exception('No Dfxp Parser has been implemented');
-		$parser = new Captions_Parser_DfxpParser($content);
+		throw new \Captions\Parser\Exception('No Dfxp Parser has been implemented');
+		$parser = new \Captions\Parser\DfxpParser($content);
 		return $parser->parse();
 	}
 
-	public static function to_dfxp(Captions_Set $captions, $file = null)
+	public static function to_dfxp(\Captions\Set $captions, $file = null)
 	{
-		$renderer = new Captions_Renderer_DfxpRenderer();
+		$renderer = new \Captions\Renderer\DfxpRenderer();
 		return $renderer->render($captions, $file);
 	}
 

@@ -1,6 +1,7 @@
 <?PHP
+namespace Captions\Helper;
 
-class Captions_Helper_DfxpHelper
+class DfxpHelper
 {
 	public function string_to_time($string)
 	{

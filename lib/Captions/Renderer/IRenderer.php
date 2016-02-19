@@ -1,6 +1,7 @@
 <?PHP
+namespace Captions\Renderer;
 
-interface Captions_Renderer
+interface IRenderer
 {
 	public function render($caption_set, $file = false);
 }

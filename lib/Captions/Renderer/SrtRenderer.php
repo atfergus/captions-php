@@ -1,7 +1,8 @@
 <?PHP
+namespace Captions\Renderer;
 
-class Captions_Renderer_SrtRenderer
-	implements Captions_Renderer
+class SrtRenderer
+	implements IRenderer
 {
 	public function render($caption_set, $file = false)
 	{

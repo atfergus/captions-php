@@ -1,5 +1,6 @@
 <?PHP
+namespace Captions;
 
-class Captions_Exception
-	extends Exception
+class Exception
+	extends \Exception
 {}
